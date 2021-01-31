@@ -4,6 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>javascript practice</title>
+    <!-- <script>
+        while(true){
+            var input = prompt("입력해주세요", "");
+            if(input.indexOf("안녕")>=0){
+                alert("안녕하세요");
+            }else if(input.indexOf("시간")>=0){
+                var hours = (new Date()).getHours();
+                alert(hours + "시입니다!");
+            }else if(input.indexOf("잘 있어")>=0 || input.indexOf("잘 있어")>=0){
+                alert("안녕히가세요");
+                break;
+            }
+        }
+    </script> -->
+
+    <!-- <script>
+        var array = [52, 273, 103, 32, 57, 103, 31, 2];
+
+        //최소값 찾기
+        var output = Number.MAX_VALUE;
+        for (let i = 0; i < array.length; i++) {
+            if(output > array[i]){
+                output = array[i];
+            }
+        }
+        console.log(output);
+
+        //최대값 찾기
+        var output2 = Number.MIN_VALUE;
+        for (let i = 0; i < array.length; i++) {
+            if(output2 < array[i]){
+                output2 = array[i];
+            }
+        }
+        console.log(output2);
+    </script> -->
+
+    <script>
+        //함수만들기
+
+        //이름 있는 함수를 만드는 방법 - 선언적함수
+        function testA(){
+            alert("testA");
+        }
+
+        //이름 없는 함수를 만드는 방법 - 익명함수
+        let testB = function() {
+            alert("testB");
+        };
+
+        testA();
+        testB();
+    </script>
+    
 </head>
 <body>
     
