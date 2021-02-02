@@ -41,7 +41,7 @@
         console.log(output2);
     </script> -->
 
-    <script>
+    <!-- <script>
         //함수만들기
 
         //이름 있는 함수를 만드는 방법 - 선언적함수
@@ -56,8 +56,32 @@
 
         testA();
         testB();
-    </script>
+    </script> -->
     
+
+    <!-- 모던 웹을 위한 JavaScript + jQuery 입문 3판 28강 - 리턴 -->
+    <script>
+        function findNumber(array, number){
+            //조기리턴
+            if(!Array.isArray(array)){return;}
+            if(typeof(number) != "number"){return}
+            
+            for (let i = 0; i < array.length; i++) {
+                if(array[i] == number){
+                    return i;
+                }
+                
+            }
+        }
+
+        //함수이름 findNumber(array, number)
+        // - 첫 번째 매개변수: 배열
+        // - 두 번째 매개변수: 숫자 - 찾고싶은 숫자
+        // - 리턴: 해당 숫자의 인덱스
+        var output = findNumber([1,2,3,4,5,6,7,8], 7);
+        alert(output);
+    </script>
+
 </head>
 <body>
     
