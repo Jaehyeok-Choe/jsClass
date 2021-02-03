@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모던 웹을 위한 JavaScript + jQuery 입문 3판 31강 - 기본 내장 함수
+    </title>
+    <script>
+        alert("시작되었습니다");
+        // 특정 시간 후에 함수를 1번만 실행하는 녀석
+        // setTimeout(function(){
+        //     alert("1초가 지났습니다");
+        // }, 1000);
+
+        const SECONDS = 1000;    
+
+        // setInterval() 함수는 계속 반복
+        var id = setInterval(function(){
+            alert("1초마다 실행합니다");
+        }, 1*SECONDS);
+
+        setTimeout(() => {
+           clearInterval(id); 
+        }, 3*SECONDS);
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
