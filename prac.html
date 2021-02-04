@@ -5,29 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        function cal(){
-            let firstNum = 0;
-            let secondNum = 0;
-            let result = 0;
+        // function cal(){
+        //     let firstNum = 0;
+        //     let secondNum = 0;
+        //     let result = 0;
 
-            while(true){
-                firstNum = Number(prompt("첫번째 숫자를 입력해주세요: "));
-                secondNum = Number(prompt("두번째 숫자를 입력해주세요: "));
-                result = firstNum + secondNum;
-                if(isNaN(result)){
-                    alert("숫자를 입력하라고!!");
-                }else{
-                    alert("입력하신 두 숫자의 합은: " + result + "입니다.");
-                    return false;
-                }
-            }
-        }
+        //     while(true){
+        //         firstNum = Number(prompt("첫번째 숫자를 입력해주세요: "));
+        //         secondNum = Number(prompt("두번째 숫자를 입력해주세요: "));
+        //         result = firstNum + secondNum;
+        //         if(isNaN(result)){
+        //             alert("숫자를 입력하라고!!");
+        //         }else{
+        //             alert("입력하신 두 숫자의 합은: " + result + "입니다.");
+        //             return false;
+        //         }
+        //     }
+        // }
        
-        cal();
+        // cal();
+
+        //현재시간 보여주는 코드
+        // function tick(){
+        //     const element = (
+        //         <h3>현재 시각은 [{new Date().toLocaleTimeString()}] 입니다.</h3>
+        //     );
+        //     ReactDOM.render(element, document.getElementById('root'));
+        // }
+
+        // setInterval(tick, 1000);
                 
     </script>
 </head>
 <body>
-    
+    <div id="root"></div>
 </body>
 </html>
