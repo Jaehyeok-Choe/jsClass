@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모던 웹을 위한 JavaScript + jQuery 입문 3판 40강 - 객체 지향 기본[1] - 객체를 만드는 함수
+    </title>
+    <script>
+        function createStudent(name, korean, math, english){
+            var object = {
+                name: name,
+                korean: korean,
+                math: math,
+                english: english
+            };
+            object.getSum = function(){
+                return this.korean + this.math + this.english;
+            }
+            return object;
+        }
+
+        var students = [];
+        students.push(createStudent('Ben', 100,100,100));
+        console.log(students);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
