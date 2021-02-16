@@ -7,23 +7,39 @@
     <title>모던 웹을 위한 JavaScript + jQuery 입문 3판 40강 - 객체 지향 기본[1] - 객체를 만드는 함수
     </title>
     <script>
-        function createStudent(name, korean, math, english){
-            var object = {
-                name: name,
-                korean: korean,
-                math: math,
-                english: english
-            };
-            object.getSum = function(){
-                return this.korean + this.math + this.english;
+        class Student{
+            constructor(name, korean, math, english){
+                this.name = name;
+                this.korean = korean;
+                this.math = math;
+                this.english = english;
             }
-            return object;
+
+            getSum(){
+                return this.korean + this.math + this.english;
+            };
+
+            getAverage(){
+                return this.getSum() / 3;
+            };
+
+            toString(){
+                return this.name + "\t" + this.getSum + "\t" + this.getAverage() + "\n";
+            };
         }
-
+    </script>
+    <script>
         var students = [];
-        students.push(createStudent('Ben', 100,100,100));
-        console.log(students);
-
+        students.push(new Student("Ben", 100, 90, 80));
+        students.push(new Student("Hong", 100, 90, 80));
+        students.push(new Student("Beau", 100, 90, 80));
+    </script>
+    <script>
+        var output = "Name\tSum\tAverage\n"
+        for (var i = 0; i < students.length; i++) {
+            output += students[i].toString();
+        }
+        console.log(output);
     </script>
 </head>
 <body>
