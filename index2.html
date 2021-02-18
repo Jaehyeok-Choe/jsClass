@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    <select id="a" onchange="showTest()">
+        <option value="t">test</option>
+        <option value="c">cool</option>
+    </select>
+</div>
+    <div id="test" style="display:none" >
+        테스트
+    </div>
+    <div id="cool" style="display:none">
+        쿨
+    </div>
+</body>
+<script>
+    function showTest(){
+        var value = document.getElementById('a').options[document.getElementById("a").selectedIndex].value;
+        if(value==="t"){
+            document.getElementById('test').style.display = "block";
+            document.getElementById('cool').style.display = "none";
+        }else if(value === "c"){
+            document.getElementById('cool').style.display = "block";
+            document.getElementById('test').style.display = "none";
+        }
+    }
+</script>
+</html>
