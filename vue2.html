@@ -11,7 +11,7 @@
 
 <body>
     <div id="app">
-        <h1> {{ message }}</h1>
+        <!-- <h1> {{ message }}</h1>
         <input type="text" v-model="message">
         <h1 v-if="visible">I'm Ben!</h1>
         <ul>
@@ -31,29 +31,57 @@
                 </tr>
             </tbody>
         </table>
-        <button v-on:click="visible = !visible">Button</button>
+        <button v-on:click="visible = !visible">Button</button> -->
+        
+        <button @click="add()">Button</button>
+        <ul>
+            <li v-for="n in numbers">{{ n }}</li>
+        </ul>
+        <input type="text" v-model="animal" @keyup.enter="capture()">
+        <ul>
+            <li v-for="a in animals">{{ a }}</li>
+        </ul>
     </div>
     <script>
         var app = new Vue({
             el: '#app',
+            // data: {
+            //     message: 'Hi',
+            //     visible: true,
+            //     numbers: [1, 2, 3, 4, 5, 6, 7],
+            //     people: [
+            //         {
+            //             name: 'Lee',
+            //             age: 30
+            //         },
+            //         {
+            //             name: 'Choe',
+            //             age: 77
+            //         },
+            //         {
+            //             name: 'Park',
+            //             age: 107
+            //         }
+            //     ]
+            // }
+
             data: {
-                message: 'Hi',
-                visible: true,
                 numbers: [1, 2, 3, 4, 5, 6, 7],
-                people: [
-                    {
-                        name: 'Lee',
-                        age: 30
-                    },
-                    {
-                        name: 'Choe',
-                        age: 77
-                    },
-                    {
-                        name: 'Park',
-                        age: 107
+                animal: null,
+                animals: ['lion', 'tiger', 'dog', 'cat', 'eagle']
+            },
+            methods: {
+                add: function () {
+                    var lastNum = this.numbers[this.numbers.length - 1];
+                    lastNum += 1;
+                    this.numbers.push(lastNum);
+                },
+                capture: function () {
+                    if (this.animal) {
+                        this.animals.push(this.animal);
+                        this.animal = null;
                     }
-                ]
+                }
             }
         });
     </script>
