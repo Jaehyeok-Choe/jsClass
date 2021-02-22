@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모던 웹을 위한 JavaScript + jQuery 입문 3판 50강 - 문서 객체 모델 만들기
+    </title>
+    <script>
+        window.onload = function () {
+            for (let i = 0; i < 10; i++) {
+                var header = document.createElement("h1");
+                header.innerHTML = "Hello World - " + i + " index";
+                document.body.appendChild(header);
+            }
+
+            for (var i = 0; i < 10; i++) {
+                var image = document.createElement("img");
+                image.setAttribute("src", "http://placehold.it/300x" + (i + 1) + "0");
+                document.body.appendChild(image);
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
