@@ -17,7 +17,7 @@
         <div class="body">
             <div class="list" v-if="mode === 'list'">
                 <ul>
-                    <li v-for="m in memos">{{ m.content }}</li>
+                    <li v-for="m in memos" @click="open(m.id)">{{ m.content }}</li>
                 </ul>
             </div>
             <div class="write" v-else>

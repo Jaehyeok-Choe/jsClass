@@ -7,25 +7,21 @@ var app = new Vue({
             content: null,
             regDate: null
         },
-        memos: [
-            {
-                id: 1,
-                content: 'memo1',
-                regDate: new Date()
-            },
-            {
-                id: 2,
-                content: 'memo2',
-                regDate: new Date()
-            },
-            {
-                id: 3,
-                content: 'memo3',
-                regDate: new Date()
-            },
-        ]
+        memos: []
     },
     methods:{
+        renew: function(val){
+            return JSON.parse(JSON.stringify(val));
+        },
+        open: function(id){
+            for(var i in this.memos){
+                if(this.memos[i].id === id){
+                    this.memo = this.renew(this.memos[i]);
+                    break;
+                }
+            }
+            this.mode = 'edit';
+        },
         write: function(){
             this.mode = 'write';
         },
@@ -37,11 +33,19 @@ var app = new Vue({
                 content: this.memo.content,
                 regDate: new Date()
             });
-
+            this.memo.content = null;
             this.mode = 'list';
+
+            localStorage.setItem('memos', JSON.stringify(this.memos));
         },
         cancel: function(){
             this.mode = 'list';
+        }
+    },
+    created: function(){
+        var memos = localStorage.getItem('memos');
+        if(memos){
+            this.memos = JSON.parse(memos);
         }
     }
 })
