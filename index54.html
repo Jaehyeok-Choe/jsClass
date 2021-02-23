@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모던 웹을 위한 JavaScript + jQuery 입문 3판 54강 - 10장 조금 더 나아가기(1)
+    </title>
+</head>
+
+<body>
+    <h1 id="clock"></h1>
+    <script>
+        var clock = document.getElementById("clock");
+
+        clock.innerHTML = (new Date()).toString();
+        setInterval(function () {
+            clock.innerHTML = (new Date()).toString();
+        }, 1000)
+    </script>
+</body>
+
+</html>
