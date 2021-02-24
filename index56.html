@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모던 웹을 위한 JavaScript + jQuery 입문 3판 56강 - 고전 이벤트 모델
+    </title>
+    <style>
+        * {
+            border: 3px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outer">
+        <div id="inner">
+            <h1 id="header">Hello World</h1>
+        </div>
+    </div>
+    <script>
+        document.getElementById("outer").onclick = function () {
+            this.style.backgroundColor = "red"
+        }
+        document.getElementById("inner").onclick = function () {
+            this.style.backgroundColor = "green"
+        }
+        document.getElementById("header").onclick = function () {
+            this.style.backgroundColor = "blue"
+        }
+        document.body.onclick = function () {
+            this.style.backgroundColor = "yellow"
+        }
+    </script>
+
+    <!-- 클릭시 클자 색 바꿈 -->
+    <!-- <script>
+        for (var i = 0; i < 10; i++) {
+            var header = document.createElement("h1");
+            header.innerHTML = "Hello World";
+            header.onclick = function () {
+                this.style.color = "red";
+            };
+            document.body.appendChild(header);
+        }
+    </script> -->
+</body>
+
+</html>
