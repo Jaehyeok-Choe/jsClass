@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모던 웹을 위한 JavaScript + jQuery 입문 3판 59강 - 기본 예외 처리
+    </title>
+</head>
+
+<body>
+    <script>
+        var input = prompt("숫자를 입력해주세요", "숫자");
+        var numberInput = Number(input);
+        var array = [
+            function () { alert("0번째 함수입니다.") },
+            function () { alert("1번째 함수입니다.") },
+            function () { alert("2번째 함수입니다.") },
+        ];
+
+        try {
+            array[numberInput]();
+        } catch (e) {
+            consol.log(e);
+        }
+
+
+    </script>
+</body>
+
+</html>
